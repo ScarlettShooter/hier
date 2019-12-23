@@ -51,6 +51,8 @@ public class HiER {
             e.getRegistry().register(new ModBlocks().copper_ore);
             e.getRegistry().register(new ModBlocks().tin_ore);
             e.getRegistry().register(new ModBlocks().aluminium_ore);
+
+            e.getRegistry().register(new ModBlocks().generator);
         }
         @SubscribeEvent
         public static void onItemRegistry(final RegistryEvent.Register<Item> e) {
@@ -59,6 +61,8 @@ public class HiER {
             e.getRegistry().register(new BlockItem(ModBlocks.copper_ore, properties).setRegistryName("copper_ore"));
             e.getRegistry().register(new BlockItem(ModBlocks.tin_ore, properties).setRegistryName("tin_ore"));
             e.getRegistry().register(new BlockItem(ModBlocks.aluminium_ore, properties).setRegistryName("aluminium_ore"));
+
+            e.getRegistry().register(new BlockItem(ModBlocks.generator, properties).setRegistryName("generator"));
 
             e.getRegistry().register(new ModItems().copper_ingot);
             e.getRegistry().register(new ModItems().tin_ingot);

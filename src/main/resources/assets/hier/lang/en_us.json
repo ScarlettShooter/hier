@@ -5,6 +5,8 @@
   "block.hier.tin_ore" : "Cassiterite",
   "block.hier.aluminium_ore" : "Bauxite",
 
+  "block.hier.generator" : "SF Generator",
+
   "item.hier.copper_ingot" : "Copper Ingot",
   "item.hier.tin_ingot" : "Tin Ingot",
   "item.hier.aluminium_ingot" : "Aluminium Ingot"

@@ -11,4 +11,6 @@ public class ModBlocks {
     public static Block tin_ore = new OreBlock("tin_ore", 1, 2, 2);
     @ObjectHolder("hier:aluminium_ore")
     public static Block aluminium_ore = new OreBlock("aluminium_ore", 2, 3, 3);
+    @ObjectHolder("hier:generator")
+    public static Block generator = new Generator();
 }

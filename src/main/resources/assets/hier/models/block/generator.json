@@ -1,0 +1,9 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "hier:block/generator_top",
+    "front": "hier:block/generator_front",
+    "side": "hier:block/generator_side",
+    "bottom": "hier:block/generator_bottom"
+  }
+}
