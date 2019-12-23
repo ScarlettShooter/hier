@@ -3,6 +3,7 @@ package com.scrl0.hier;
 import com.scrl0.hier.blocks.ModBlocks;
 import com.scrl0.hier.setup.ClientProxy;
 import com.scrl0.hier.setup.IProxy;
+import com.scrl0.hier.setup.ModSetup;
 import com.scrl0.hier.setup.ServerProxy;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
@@ -25,6 +26,8 @@ public class HiER {
 
     public static IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
 
+    public static ModSetup setup = new ModSetup();
+
     private static final Logger LOGGER = LogManager.getLogger();
 
     public HiER() {
@@ -36,7 +39,8 @@ public class HiER {
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-
+        setup.init();
+        proxy.init();
     }
 
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -44,10 +48,15 @@ public class HiER {
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> e) {
             e.getRegistry().register(new ModBlocks().copper_ore);
+            e.getRegistry().register(new ModBlocks().tin_ore);
+            e.getRegistry().register(new ModBlocks().aluminium_ore);
         }
         @SubscribeEvent
         public static void onItemRegistry(final RegistryEvent.Register<Item> e) {
-            e.getRegistry().register(new BlockItem(ModBlocks.copper_ore, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)).setRegistryName("copper_ore"));
+            Item.Properties properties = new Item.Properties().group(setup.itemGroup);
+            e.getRegistry().register(new BlockItem(ModBlocks.copper_ore, properties).setRegistryName("copper_ore"));
+            e.getRegistry().register(new BlockItem(ModBlocks.tin_ore, properties).setRegistryName("tin_ore"));
+            e.getRegistry().register(new BlockItem(ModBlocks.aluminium_ore, properties).setRegistryName("aluminium_ore"));
         }
     }
 }
