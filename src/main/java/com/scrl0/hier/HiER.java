@@ -1,6 +1,7 @@
 package com.scrl0.hier;
 
 import com.scrl0.hier.blocks.ModBlocks;
+import com.scrl0.hier.items.ModItems;
 import com.scrl0.hier.setup.ClientProxy;
 import com.scrl0.hier.setup.IProxy;
 import com.scrl0.hier.setup.ModSetup;
@@ -54,9 +55,14 @@ public class HiER {
         @SubscribeEvent
         public static void onItemRegistry(final RegistryEvent.Register<Item> e) {
             Item.Properties properties = new Item.Properties().group(setup.itemGroup);
+
             e.getRegistry().register(new BlockItem(ModBlocks.copper_ore, properties).setRegistryName("copper_ore"));
             e.getRegistry().register(new BlockItem(ModBlocks.tin_ore, properties).setRegistryName("tin_ore"));
             e.getRegistry().register(new BlockItem(ModBlocks.aluminium_ore, properties).setRegistryName("aluminium_ore"));
+
+            e.getRegistry().register(new ModItems().copper_ingot);
+            e.getRegistry().register(new ModItems().tin_ingot);
+            e.getRegistry().register(new ModItems().aluminium_ingot);
         }
     }
 }

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "hier:aluminium_ore"
+  },
+  "result": "hier:aluminium_ingot",
+  "experience": 0.7,
+  "cookingtime": 200
+}
