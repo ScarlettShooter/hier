@@ -1,6 +1,7 @@
 package com.scrl0.hier.blocks;
 
 import com.scrl0.hier.HiER;
+import com.scrl0.hier.utility.MaterialType;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -39,11 +40,19 @@ public class ModBlocks {
     @ObjectHolder(HiER.MOD_ID + ":generator")
     public static Block generator = new Generator("generator", 1, 4, 4);
 
-    register("copper_ore", copper_ore);
+    private void registerAll() {
+        register("copper_ore", copper_ore);
+        register("generator", generator);
+
+    }
 
     private void register(String name, Block block)  {
         Item.Properties properties = new Item.Properties().group(setup.itemGroup);
         BLOCKS_TO_REGISTER.put(name, new BlockItem(block, properties));
+    }
+
+    foreach(MaterialType.getOre()) {
+        BLOCKS_TO_REGISTER.put(MaterialType.getType() + "_ore", new BlockItem(block, properties));
     }
 
 }

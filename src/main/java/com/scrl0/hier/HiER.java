@@ -46,6 +46,7 @@ public class HiER {
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> e) {
             e.getRegistry().register(new ModBlocks().copper_ore);
+            /*
             e.getRegistry().register(new ModBlocks().tin_ore);
             e.getRegistry().register(new ModBlocks().aluminium_ore);
             e.getRegistry().register(new ModBlocks().silver_ore);
@@ -55,8 +56,7 @@ public class HiER {
             e.getRegistry().register(new ModBlocks().platinum_ore);
             e.getRegistry().register(new ModBlocks().titanium_ore);
             e.getRegistry().register(new ModBlocks().nickel_ore);
-
-            e.getRegistry().register(new ModBlocks().generator);
+            */
 
             LOGGER.debug("HiER just registered blocks");
         }
