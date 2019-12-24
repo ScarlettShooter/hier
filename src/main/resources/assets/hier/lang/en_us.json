@@ -4,10 +4,24 @@
   "block.hier.copper_ore" : "Cuprite",
   "block.hier.tin_ore" : "Cassiterite",
   "block.hier.aluminium_ore" : "Bauxite",
+  "block.hier.zinc_ore" : "Sphalerite",
+  "block.hier.lead_ore" : "Galena",
+  "block.hier.nickel_ore" : "Nickel",
+  "block.hier.platinum_ore" : "Platinum",
+  "block.hier.silver_ore" : "Silver",
+  "block.hier.titanium_ore" : "Titanium",
+  "block.hier.chrome_ore" : "Chrome",
 
   "block.hier.generator" : "SF Generator",
 
   "item.hier.copper_ingot" : "Copper Ingot",
   "item.hier.tin_ingot" : "Tin Ingot",
-  "item.hier.aluminium_ingot" : "Aluminium Ingot"
+  "item.hier.aluminium_ingot" : "Aluminium Ingot",
+  "item.hier.zinc_ingot" : "Zinc Ingot",
+  "item.hier.lead_ingot" : "Lead Ingot",
+  "item.hier.nickel_ingot" : "Nickel Ingot",
+  "item.hier.platinum_ingot" : "Platinum Ingot",
+  "item.hier.silver_ingot" : "Silver Ingot",
+  "item.hier.titanium_ingot" : "Titanium Ingot",
+  "item.hier.chrome_ingot" : "Chrome Ingot"
 }

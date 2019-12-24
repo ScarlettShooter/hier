@@ -1,0 +1,5 @@
+{
+  "variants" : {
+    "" : { "model" : "hier:block/silver_ore"}
+  }
+}

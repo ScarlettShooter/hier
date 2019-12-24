@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "hier:titanium_ore"
+  },
+  "result": "hier:titanium_ingot",
+  "experience": 0.7,
+  "cookingtime": 200
+}

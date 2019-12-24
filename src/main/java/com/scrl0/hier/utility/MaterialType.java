@@ -19,7 +19,14 @@ public enum MaterialType {
 
     COPPER("copper", 0, 2, 2, 255, 6.0F, 2.0F, 33, new int[] {3, 5, 7, 2}, 7, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1.0F),
     TIN("tin", 0, 2, 2, 255, 6.0F, 2.0F, 33, new int[] {4, 4, 7, 2}, 6, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1.0F),
-    ALUMINIUM("aluminium", 1, 3, 2, 455, 7.0F, 3.0F, 33, new int[] {4, 6, 8, 3}, 9, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1.5F);
+    ALUMINIUM("aluminium", 1, 3, 2, 455, 7.0F, 3.0F, 33, new int[] {4, 6, 8, 3}, 9, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1.5F),
+    SILVER("silver", 2, 3, 2, 623, 10.0F, 5.0F, 33, new int[] {4, 7, 9, 3}, 15, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 5F),
+    LEAD("lead", 2, 5, 10, 999, 5.0F, 4.5F, 33, new int[] {6, 7, 10, 4}, 4, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 2.5F),
+    PLATINUM("platinum", 2, 5, 3, 1661, 9.0F, 5.0F, 33, new int[] {6, 8, 11, 5}, 15, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1.5F),
+    NICKEL("nickel", 2, 4, 5, 722, 7.0F, 3.0F, 33, new int[] {4, 6, 8, 3}, 7, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1.5F),
+    CHROME("chrome", 2, 3, 4, 456, 6.0F, 3.0F, 33, new int[] {3, 5, 8, 2}, 6, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1.5F),
+    ZINC("zinc", 2, 4, 2, 516, 8.0F, 5.0F, 33, new int[] {6, 8, 10, 4}, 11, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1.5F),
+    TITANIUM("titanium", 2, 4, 4, 1221, 7.0F, 4.0F, 33, new int[] {10, 5, 5, 10}, 10, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1.0F);
 
     private static final int[] Max_Damage_Array = new int[] {13,15,16,11};
     private final String type;
