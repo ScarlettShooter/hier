@@ -15,33 +15,41 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.common.ToolType;
 
 import java.util.Random;
 
 public class Generator extends HorizontalBlock {
     public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
 
-    public Generator() {
+    public Generator(String registryName, int harvestLevel, float hardness, float resistance) {
         super(Properties.create(Material.IRON)
                 .sound(SoundType.METAL)
-                .hardnessAndResistance(2.0f)
+                .harvestTool(ToolType.PICKAXE)
+                .harvestLevel(harvestLevel)
+                .hardnessAndResistance(hardness, resistance)
         );
-        setRegistryName("generator");
+        setRegistryName(registryName);
         setDefaultState((BlockState)((BlockState)this.stateContainer.getBaseState()).with(FACING, Direction.NORTH).with(BlockStateProperties.POWERED, false));
     }
+    /*If powered emitting light*/
     @Override
     public int getLightValue(BlockState state) {
         return !state.get(BlockStateProperties.POWERED) ? super.getLightValue(state) : 10;
     }
-
+    /*Which direction to be put in the world*/
+    @Override
     public BlockState getStateForPlacement(BlockItemUseContext context) {
         return (BlockState)this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
     }
-
+    /*Adding properties to blockstate*/
+    @Override
     protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
         builder.add(new IProperty[]{FACING});
         builder.add(new IProperty[]{BlockStateProperties.POWERED});
     }
+    /*Particles*/
+    @Override
     @OnlyIn(Dist.CLIENT)
     public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand) {
         if (stateIn.get(BlockStateProperties.POWERED)) {
@@ -58,7 +66,7 @@ public class Generator extends HorizontalBlock {
             double d5 = direction$axis == Direction.Axis.X ? (double)direction.getXOffset() * 0.52D : d4;
             double d6 = rand.nextDouble() * 6.0D / 16.0D;
             double d7 = direction$axis == Direction.Axis.Z ? (double)direction.getZOffset() * 0.52D : d4;
-            worldIn.addParticle(ParticleTypes.SMOKE, d0, d1 + 1, d2, 0.0D, 0.4D, 0.0D);
+            worldIn.addParticle(ParticleTypes.SMOKE, d0, d1 + 1, d2, 0.0D, 0.3D, 0.0D);
             worldIn.addParticle(ParticleTypes.FLAME, d0 + d5, d1 + d6, d2 + d7, 0.0D, 0.0D, 0.0D);
         }
     }
