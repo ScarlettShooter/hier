@@ -30,7 +30,7 @@ public class Generator extends HorizontalBlock {
                 .hardnessAndResistance(hardness, resistance)
         );
         setRegistryName(registryName);
-        setDefaultState((BlockState)((BlockState)this.stateContainer.getBaseState()).with(FACING, Direction.NORTH).with(BlockStateProperties.POWERED, false));
+        setDefaultState((this.stateContainer.getBaseState()).with(FACING, Direction.NORTH).with(BlockStateProperties.POWERED, false));
     }
     /*If powered emitting light*/
     @Override
@@ -40,7 +40,7 @@ public class Generator extends HorizontalBlock {
     /*Which direction to be put in the world*/
     @Override
     public BlockState getStateForPlacement(BlockItemUseContext context) {
-        return (BlockState)this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
+        return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
     }
     /*Adding properties to blockstate*/
     @Override

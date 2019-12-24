@@ -6,13 +6,12 @@ import net.minecraft.block.material.Material;
 import net.minecraftforge.common.ToolType;
 
 public class OreBlock extends Block {
-    public OreBlock(String registryName, int harvestLevel, float hardness, float resistance) {
+    public OreBlock(int harvestLevel, float hardness, float resistance) {
         super(Properties.create(Material.ROCK)
         .sound(SoundType.STONE)
         .harvestTool(ToolType.PICKAXE)
         .harvestLevel(harvestLevel)
         .hardnessAndResistance(hardness, resistance));
-        setRegistryName(registryName);
 
     }
 }
