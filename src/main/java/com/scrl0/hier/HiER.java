@@ -1,11 +1,14 @@
 package com.scrl0.hier;
 
+import com.scrl0.hier.blocks.Generator;
+import com.scrl0.hier.blocks.ModBlocks;
 import com.scrl0.hier.setup.ClientProxy;
 import com.scrl0.hier.setup.IProxy;
 import com.scrl0.hier.setup.ModSetup;
 import com.scrl0.hier.setup.ServerProxy;
 import com.scrl0.hier.utility.MaterialType;
 import net.minecraft.block.Block;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -14,6 +17,7 @@ import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.ObjectHolder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -51,16 +55,21 @@ public class HiER {
                 LOGGER.debug(MOD_ID + " just registered " + copy[i].getOre());
             }
 
+            ModBlocks.generator = new Generator("generator", 1, 4, 4);
+            e.getRegistry().register(ModBlocks.generator);
+
             LOGGER.debug(MOD_ID + " just registered blocks");
         }
         @SubscribeEvent
         public static void onItemRegistry(final RegistryEvent.Register<Item> e) {
-
+            Item.Properties properties = new Item.Properties().group(setup.itemGroup);
 
             for(int i = 0; i < MaterialType.values().length; i++) {
                 e.getRegistry().register(copy[i].getOreItem());
                 LOGGER.debug(MOD_ID + " just registered " + copy[i].getOreItem());
             }
+
+            e.getRegistry().register(new BlockItem(ModBlocks.generator, properties).setRegistryName(MOD_ID, "generator"));
 
             for(int i = 0; i < MaterialType.values().length; i++) {
                 e.getRegistry().register(copy[i].getItem());

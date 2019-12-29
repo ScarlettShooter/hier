@@ -48,6 +48,9 @@ public class Generator extends HorizontalBlock {
         builder.add(new IProperty[]{FACING});
         builder.add(new IProperty[]{BlockStateProperties.POWERED});
     }
+
+
+
     /*Particles*/
     @Override
     @OnlyIn(Dist.CLIENT)
