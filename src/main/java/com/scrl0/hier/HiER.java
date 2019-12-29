@@ -55,8 +55,7 @@ public class HiER {
                 LOGGER.debug(MOD_ID + " just registered " + copy[i].getOre());
             }
 
-            ModBlocks.generator = new Generator("generator", 1, 4, 4);
-            e.getRegistry().register(ModBlocks.generator);
+            e.getRegistry().register(new Generator("generator", 1, 4, 4));
 
             LOGGER.debug(MOD_ID + " just registered blocks");
         }
@@ -69,7 +68,7 @@ public class HiER {
                 LOGGER.debug(MOD_ID + " just registered " + copy[i].getOreItem());
             }
 
-            e.getRegistry().register(new BlockItem(ModBlocks.generator, properties).setRegistryName(MOD_ID, "generator"));
+            e.getRegistry().register(new BlockItem(new Generator("generator", 1, 4, 4), properties).setRegistryName(MOD_ID, "generator"));
 
             for(int i = 0; i < MaterialType.values().length; i++) {
                 e.getRegistry().register(copy[i].getItem());
